@@ -1,5 +1,6 @@
 package test;
 
+import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.Selenide;
 import data.InvalidData;
 import data.ValidData;
@@ -8,6 +9,10 @@ import org.junit.jupiter.api.Test;
 import page.CheckColor;
 import page.PutData;
 import settings.SetP;
+
+import static com.codeborne.selenide.Selenide.$;
+import static org.assertj.core.api.Assertions.assertThat;
+
 @DisplayName("Проверка формы регистрации студента")
 
 public class StartTest  extends SetP {
@@ -21,23 +26,24 @@ public class StartTest  extends SetP {
     @DisplayName("Проверка заполнения формы валидными данными")
     public void CompletionFormTest() {
         putData.openPage()
+
                 .setFirstName(validData.getFirstName())
                 .setLastName(validData.getLastName())
                 .setEmail(validData.getEmail())
                 .setGender()
-                .setTelephoneNumber(validData.getMobileNumber())
+                .setMobileNumber(validData.getMobileNumber())
                 .setCalendar(validData.getMonth(), validData.getYear(), validData.getDay())
                 .setSubjects(validData.getSubjects())
                 .setHobbies()
                 .setPicture(validData.getFile())
                 .setCurrentAddress(validData.getAddress())
                 .setState(validData.getState())
-                .setCity(validData.getCity())
-                .submit();
+                .setCity(validData.getCity());
+        Selenide.executeJavaScript("document.querySelector('#submit').click();");
 
         Selenide.sleep(100);
 
-        CheckColor.checkVisible()
+        checkFields.checkVisible()
                 .checkResult("Student Name", validData.getFirstName() + " " + validData.getLastName()
                         , "имя и фамилию")
                 .checkResult("Student Email", validData.getEmail(), "почту")
@@ -56,8 +62,8 @@ public class StartTest  extends SetP {
     @Test
     @DisplayName("Валидация полей.Оставляем поля не заполненными")
     public void FillUpPageNegativeTest() {
-            putData.openPage()
-                .submit();
+            putData.openPage();
+        Selenide.executeJavaScript("document.querySelector('#submit').click();");
 
         Selenide.sleep(500);
 
@@ -66,18 +72,20 @@ public class StartTest  extends SetP {
         assertThat(invalidData.getInputRedColor()).as("Ввод фамилии - цвет не совпадает")
                 .isEqualTo(putData.InputGetCssValueLastName());
         assertThat(invalidData.getInputRedColor()).as("Ввод телефона - цвет не совпадает")
-                .isEqualTo(putData.InputGetCssValueTelephoneNumber());
+                .isEqualTo(putData.InputGetCssValueMobileNumber());
         assertThat(putData.ButtonGetCssValueGender())
                 .as("Кнопка выбора пола - цвет не совпадает")
                 .isEqualTo(invalidData.getButtonRedColor());
     }
 
+
+
     @Test
     @DisplayName("Валидация полей.Вводим в поле телефон буквы")
     public void InputTelephoneNumberNegativeTest() {
             putData.openPage()
-                .setMobileNumber(invalidData.getTelephone())
-                .submit();
+                .setMobileNumber(invalidData.getTelephone());
+        Selenide.executeJavaScript("document.querySelector('#submit').click();");
 
         Selenide.sleep(500);
 

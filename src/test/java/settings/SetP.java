@@ -8,7 +8,7 @@ public class SetP {
     private static void setLocalDriver() {
         pageLoadTimeout = 100000000;
         browser = "chrome";
-        browserSize = "1400x900";
+        browserSize = "1200x800";
         headless = false;
 //        proxyEnabled = true;
 //        fileDownload = PROXY;
