@@ -24,7 +24,7 @@ public class StartTest  extends SetP {
 
     @Test
     @DisplayName("Проверка заполнения формы валидными данными")
-    public void CompletionFormTest() {
+    public void FillUpPageTest() {
         putData.openPage()
 
                 .setFirstName(validData.getFirstName())
