@@ -7,7 +7,7 @@ public class ValidData {
     private final String firstName = "Yuliya";
     private final String lastName = "Shashkova";
     private final String mobileNumber = "9506149598";
-    private final String email = "julia.rine55@mail.ru";
+    private final String email = "crs.rine55@mail.ru";
     private final String address = "1 Apple Park Way. Cupertino, CA";
     private final String day = "19";
     private final String month = "October";
