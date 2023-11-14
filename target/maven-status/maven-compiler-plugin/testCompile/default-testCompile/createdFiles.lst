@@ -1,0 +1,14 @@
+elements\DropDown.class
+data\ValidData.class
+test\StartTest.class
+elements\SelectorWAuto.class
+settings\SetP.class
+elements\LinkUrl.class
+elements\Calendar.class
+helpers\FakeData.class
+elements\Buttons.class
+page\CheckColor.class
+page\PutData.class
+elements\Input.class
+data\InvalidData.class
+elements\UploadFile.class
