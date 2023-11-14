@@ -9,18 +9,18 @@ private final SelenideElement selectorCalendar;
 private final SelenideElement selectorYear;
 private final SelenideElement selectorMonth;
 private final SelenideElement selectorDay;
- public Calendar(String calendarName,SelenideElement selectorCalendar, SelenideElement selectorYear,
-                 SelenideElement selectorMonth, SelenideElement selectorDay) {
+ public Calendar(String calendarName,SelenideElement selectorCalendar,
+                 SelenideElement selectorYear, SelenideElement selectorMonth, SelenideElement selectorDay) {
      this.name = calendarName;
      this.selectorCalendar = selectorCalendar;
      this.selectorYear = selectorYear;
      this.selectorMonth = selectorMonth;
      this.selectorDay = selectorDay;
  }
- public void setCalendar (String month, String year, String day) {
+ public void setCalendar ( String year, String month, String day) {
      selectorCalendar.click();
-     selectorMonth.click();
      selectorYear.click();
+     selectorMonth.click();
      selectorDay.click();
 
  }

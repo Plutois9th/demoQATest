@@ -1,6 +1,7 @@
 package page;
 
 import elements.*;
+import io.qameta.allure.Step;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.$;
@@ -14,8 +15,8 @@ public class PutData {
     private final Buttons genderButton = new Buttons("Выбор пола", $(".custom-control-label"));
     private final Input mobileNumber = new Input("Телефон", $("#userNumber"));
     private final Calendar calendar = new Calendar("Practice Form",
-            $(".react-datepicker__month-select"),
             $(".react-datepicker__year-select"),
+            $(".react-datepicker__month-select"),
             $(".react-datepicker__day.react-datepicker__day--019"),
             $("#dateOfBirthInput"));
     private final SelectorWAuto subjects = new SelectorWAuto("Предметы", $("#subjectsInput"));
@@ -26,12 +27,13 @@ public class PutData {
     private final DropDown city = new DropDown("Город", $("#city"), $("#stateCity-wrapper"));
     private final Buttons submit = new Buttons("Submit", $("#submit"));
 
-
+@Step("Открываем страницу студента")
     public PutData openPage() {
         url.openUrl();
         $(".practice-form-wrapper").shouldHave(text(TITLE_TEXT));
         return this;
     }
+    @Step("Вводим имя")
     public PutData setFirstName(String value) {
         firstName.setValue(value);
         return this;
