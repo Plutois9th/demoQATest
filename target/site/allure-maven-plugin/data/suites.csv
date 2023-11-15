@@ -1,4 +1,4 @@
 "Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
-"passed","Tue Nov 14 11:26:10 GMT+03:00 2023","Tue Nov 14 11:26:56 GMT+03:00 2023","46918","","Проверка формы регистрации студента","","test.StartTest","inputTelephoneNumberNegativeTest","Валидация полей.Вводим в поле телефон буквы",""
-"failed","Tue Nov 14 11:26:57 GMT+03:00 2023","Tue Nov 14 11:27:59 GMT+03:00 2023","62634","","Проверка формы регистрации студента","","test.StartTest","fillUpPageTest","Проверка заполнения формы валидными данными",""
-"passed","Tue Nov 14 11:27:59 GMT+03:00 2023","Tue Nov 14 11:28:44 GMT+03:00 2023","44842","","Проверка формы регистрации студента","","test.StartTest","fillUpPageNegativeTest","Валидация полей.Оставляем поля не заполненными",""
+"passed","Wed Nov 15 07:56:51 GMT+03:00 2023","Wed Nov 15 07:57:44 GMT+03:00 2023","52657","","Проверка формы регистрации студента","","test.StartTest","inputTelephoneNumberNegativeTest","Валидация полей.Вводим в поле телефон буквы",""
+"passed","Wed Nov 15 07:57:44 GMT+03:00 2023","Wed Nov 15 07:58:37 GMT+03:00 2023","52619","","Проверка формы регистрации студента","","test.StartTest","fillUpPageTest","Проверка заполнения формы валидными данными",""
+"passed","Wed Nov 15 07:58:37 GMT+03:00 2023","Wed Nov 15 07:59:21 GMT+03:00 2023","43576","","Проверка формы регистрации студента","","test.StartTest","fillUpPageNegativeTest","Валидация полей.Оставляем поля не заполненными",""

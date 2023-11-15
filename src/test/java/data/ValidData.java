@@ -1,14 +1,16 @@
 package data;
 
+import helpers.FakeData;
 import lombok.Data;
 
 @Data
 public class ValidData {
-    private final String firstName = "Yuliya";
-    private final String lastName = "Shashkova";
-    private final String mobileNumber = "9506149598";
-    private final String email = "crs.rine55@mail.ru";
-    private final String address = "1 Apple Park Way. Cupertino, CA";
+    FakeData fakeData = new FakeData();
+    private final String firstName = fakeData.getFirstName();
+    private final String lastName = fakeData.getLastName();
+    private final String mobileNumber = fakeData.getMobileNum();
+    private final String email = fakeData.getEmail();
+    private final String address = fakeData.getAddress();
     private final String day = "19";
     private final String month = "October";
     private final String year = "1994";

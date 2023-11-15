@@ -19,8 +19,8 @@ private final SelenideElement selectorDay;
  }
  public void setCalendar ( String year, String month, String day) {
      selectorCalendar.click();
-     selectorYear.click();
-     selectorMonth.click();
+     selectorYear.selectOption(year);
+     selectorMonth.selectOption(month);
      selectorDay.click();
 
  }

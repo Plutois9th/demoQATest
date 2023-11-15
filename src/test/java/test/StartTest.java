@@ -3,16 +3,12 @@ package test;
 import com.codeborne.selenide.Selenide;
 import data.InvalidData;
 import data.ValidData;
-import elements.Calendar;
 import helpers.FakeData;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import page.CheckColor;
 import page.PutData;
 import settings.SetP;
-
-import static com.codeborne.selenide.Selenide.$;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @DisplayName("Проверка формы регистрации студента")
@@ -29,21 +25,16 @@ public class StartTest  extends SetP {
     @DisplayName("Проверка заполнения формы валидными данными")
     public void fillUpPageTest() {
         putData.openPage()
-                .setFirstName(fakeData.getFirstName())
-                .setLastName(fakeData.getLastName())
-                .setEmail(fakeData.getEmail())
-//                .setFirstName(validData.getFirstName())
-//                .setLastName(validData.getLastName())
-//                .setEmail(validData.getEmail())
+                .setFirstName(validData.getFirstName())
+                .setLastName(validData.getLastName())
+                .setEmail(validData.getEmail())
                 .setGender()
-                .setMobileNumber(fakeData.getMobileNum());
-                //.setMobileNumber(validData.getMobileNumber())
-                putData.setCalendar( validData.getYear(), validData.getMonth(), validData.getDay())
+                .setMobileNumber(validData.getMobileNumber())
+                .setCalendar( validData.getYear(), validData.getMonth(), validData.getDay())
                 .setSubjects(validData.getSubjects())
                 .setHobbies()
                 .setPicture(validData.getFile())
-                //.setCurrentAddress(validData.getAddress())
-                .setCurrentAddress(fakeData.getAddress())
+                .setCurrentAddress(validData.getAddress())
                 .setState(validData.getState())
                 .setCity(validData.getCity());
         Selenide.executeJavaScript("document.querySelector('#submit').click();");
@@ -51,17 +42,17 @@ public class StartTest  extends SetP {
         Selenide.sleep(100);
 
         checkFields.checkVisible()
-                .checkResult("Student Name", fakeData.getFirstName() + " " + fakeData.getLastName()
+                .checkResult("Student Name", validData.getFirstName() + " " + validData.getLastName()
                         , "имя и фамилию")
-                .checkResult("Student Email", fakeData.getEmail(), "почту")
+                .checkResult("Student Email", validData.getEmail(), "почту")
                 .checkResult("Gender", validData.getGender(), "пол")
-                .checkResult("Mobile", fakeData.getMobileNum(), "номер телефона")
+                .checkResult("Mobile", validData.getMobileNumber(), "номер телефона")
                 .checkResult("Date of Birth", validData.getDay() + " " + validData.getMonth() + ","
                         + validData.getYear(), "дату рождения")
                 .checkResult("Subjects", validData.getSubjects(), "предмет")
                 .checkResult("Hobbies", validData.getHobbies(), "хобби")
                 .checkResult("Picture", validData.getFile(), "загруженный файл")
-                .checkResult("Address", fakeData.getAddress(), "адрес")
+                .checkResult("Address", validData.getAddress(), "адрес")
                 .checkResult("State and City", validData.getState() + " " + validData.getCity(),
                         "штат и город");
     }
@@ -100,6 +91,4 @@ public class StartTest  extends SetP {
                 .isEqualTo(putData.InputGetCssValueMobileNumber());
 
     }
-
-    
 }
