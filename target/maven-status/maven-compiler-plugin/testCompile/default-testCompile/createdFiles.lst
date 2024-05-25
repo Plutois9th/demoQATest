@@ -10,5 +10,7 @@ elements\Buttons.class
 page\CheckColor.class
 page\PutData.class
 elements\Input.class
+test\ScreenTest.class
 data\InvalidData.class
 elements\UploadFile.class
+helpers\SaveScreenshots.class
