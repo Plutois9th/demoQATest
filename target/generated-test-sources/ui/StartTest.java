@@ -1,6 +1,7 @@
 package ui;
 
 import com.codeborne.selenide.Selenide;
+import org.junit.jupiter.api.Tag;
 import ui.data.InvalidData;
 import ui.data.ValidData;
 import ui.helpers.FakeData;
@@ -11,6 +12,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
+@Tag("UiTest")
 
 @DisplayName("Проверка формы регистрации студента")
 
