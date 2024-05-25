@@ -9,9 +9,9 @@ default:
 Integration tests with Allure:
   stage: test
   script:
-    - ./mvn clean test
-    - ./mvn allure:report
+    - mvn clean test
+    - mvn allure:report
 
   artifacts:
     paths:
-    - target\site\allure-maven-plugin/*
+    - target/site/allure-maven-plugin/*
