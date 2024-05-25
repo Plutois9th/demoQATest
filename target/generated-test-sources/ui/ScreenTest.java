@@ -5,6 +5,7 @@ import com.github.romankh3.image.comparison.ImageComparison;
 import com.github.romankh3.image.comparison.ImageComparisonUtil;
 import com.github.romankh3.image.comparison.model.ImageComparisonResult;
 import com.github.romankh3.image.comparison.model.ImageComparisonState;
+import org.junit.jupiter.api.Tag;
 import ui.helpers.SaveScreenshots;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -14,6 +15,7 @@ import ui.settings.SetP;
 
 import java.awt.image.BufferedImage;
 import java.io.File;
+@Tag("ScreenTest")
 
 public class ScreenTest extends SetP {
     SaveScreenshots saveScreenshots = new SaveScreenshots();
